@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "lib": ["es2020"],
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "removeComments": true,
+    "noEmit": false,
+    "declaration": true,
+    "sourceMap": true,
+    "plugins": [{ "transform": "typescript-transform-paths" }]
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"]
+}
