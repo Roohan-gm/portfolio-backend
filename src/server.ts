@@ -1,38 +1,30 @@
-import 'dotenv/config';
-import express from 'express';
-import cors from './middleware/cors.js';
-import apiRouter from './routes/api.js';
-import { connectToMongo, closeMongoConnection } from './database/mongo.js';
+import dotenv from "dotenv";
 
-const app = express();
-const PORT = process.env.PORT || 8001;
-
-app.use(cors);
-app.use(express.json());
-app.use('/api', apiRouter);
-
-app.use((req, res) => {
-  res.status(404).json({ message: "Route not found" });
+dotenv.config({
+  path: "./.env",
 });
 
-app.use((err: Error, req: express.Request, res: express.Response, next: express.NextFunction) => {
-  console.error("Server error:", err.stack);
-  res.status(500).json({ message: "Something went wrong!" });
-});
+import app from "./app.ts";
+import connectToDatabase from "./database/index.ts";
+import { buildAdminRouter } from "./admin/admin.ts";
 
-const start = async () => {
-  await connectToMongo();
-  app.listen(PORT, () => {
-    console.log(`Portfolio API running on http://localhost:${PORT}`);
+
+const port = process.env.PORT || 8000;
+
+connectToDatabase()
+  .then(() => {
+    const { adminRouter, admin } = buildAdminRouter();
+    app.use(admin.options.rootPath, adminRouter);
+
+    const server = app.listen(port, () => {
+      console.log("Server is running on port: ", port);
+    });
+
+    server.on("error", (error) => {
+      console.error("Server error:", error);
+      throw error;
+    });
+  })
+  .catch((error) => {
+    console.error("Failed to connect the database", error);
   });
-
-  process.on('SIGINT', async () => {
-    console.log("Shutting down...");
-    await closeMongoConnection();
-    process.exit(0);
-  });
-};
-
-start().catch(err => {
-  console.error("Failed to start server:", err.message);
-});
