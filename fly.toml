@@ -1,15 +1,15 @@
-# fly.toml app configuration file generated for portfolio-roohan on 2025-10-23T18:36:18Z
+# fly.toml app configuration file generated for portfolio-backend-roohan on 2025-10-24T12:51:13Z
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = 'portfolio-roohan'
+app = 'portfolio-backend-roohan'
 primary_region = 'iad'
 
 [build]
 
 [http_service]
-  internal_port = 8001
+  internal_port = 8080
   force_https = true
   auto_stop_machines = 'stop'
   auto_start_machines = true
