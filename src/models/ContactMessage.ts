@@ -1,5 +1,5 @@
 import mongoose, { Document, Schema } from "mongoose";
-import { ContactStatus } from "../types/index.ts";
+import { ContactStatus } from "../types/index.js";
 import nodemailer from "nodemailer";
 
 export interface IContactMessage extends Document {

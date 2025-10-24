@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import DeveloperInfo from '../models/DeveloperInfo.ts';
+import DeveloperInfo from '../models/DeveloperInfo.js';
 
 export const getDeveloperInfo = async (_: Request, res: Response) => {
   try {

@@ -1,16 +1,16 @@
 import express from 'express';
 import {
   createContactMessage,
-} from '../controllers/contactController.ts';
-import { getDeveloperInfo } from '../controllers/developerController.ts';
+} from '../controllers/contactController.js';
+import { getDeveloperInfo } from '../controllers/developerController.js';
 import {
   getProjects,
   getProjectById,
-} from '../controllers/projectController.ts';
-import { getSkills } from '../controllers/skillsController.ts';
-import { getExperience } from '../controllers/experienceController.ts';
-import { getTestimonials } from '../controllers/testimonialController.ts';
-import { getContactAnalytics } from '../controllers/analyticsController.ts';
+} from '../controllers/projectController.js';
+import { getSkills } from '../controllers/skillsController.js';
+import { getExperience } from '../controllers/experienceController.js';
+import { getTestimonials } from '../controllers/testimonialController.js';
+import { getContactAnalytics } from '../controllers/analyticsController.js';
 
 const router = express.Router();
 

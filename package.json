@@ -7,7 +7,7 @@
   "type": "module",
   "main": "dist/server.js",
   "scripts": {
-    "start": "node dist/server.ts",
+    "start": "node dist/server.js",
     "dev": "nodemon --exec \"node --loader ts-node/esm/transpile-only --experimental-specifier-resolution=node src/server.ts\"",
     "build": "tsc",
     "seed": "ts-node src/seed.ts"

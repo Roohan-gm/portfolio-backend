@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import Skills from '../models/Skills.ts';
+import Skills from '../models/Skills.js';
 
 export const getSkills = async (_: Request, res: Response) => {
   try {

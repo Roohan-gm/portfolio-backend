@@ -4,9 +4,9 @@ dotenv.config({
   path: "./.env",
 });
 
-import app from "./app.ts";
-import connectToDatabase from "./database/index.ts";
-import { buildAdminRouter } from "./admin/admin.ts";
+import app from "./app.js";
+import connectToDatabase from "./database/index.js";
+import { buildAdminRouter } from "./admin/admin.js";
 
 const port = parseInt(process.env.PORT ?? "8001", 10); // fallback to 8001 only for local dev
 const HOST = "0.0.0.0";

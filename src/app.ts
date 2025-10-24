@@ -47,7 +47,7 @@ app.use(express.urlencoded({ extended: true, limit: "16kb" }));
 app.use(express.static("public"));
 app.use(cookieParser());
 
-import routes from "./routes/index.ts";
+import routes from "./routes/index.js";
 
 app.get("/api/v1", (req, res) => {
   res.json({ message: "API is running!", version: "v1" });

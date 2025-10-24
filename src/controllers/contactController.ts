@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
-import ContactMessage from "../models/ContactMessage.ts";
-import { contactSchema } from "../validators/contact.ts";
+import ContactMessage from "../models/ContactMessage.js";
+import { contactSchema } from "../validators/contact.js";
 
 export const createContactMessage = async (req: Request, res: Response) => {
   const result = contactSchema.safeParse(req.body);

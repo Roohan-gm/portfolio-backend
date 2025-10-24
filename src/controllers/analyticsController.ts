@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import ContactMessage from '../models/ContactMessage.ts';
+import ContactMessage from '../models/ContactMessage.js';
 
 export const getContactAnalytics = async (_: Request, res: Response) => {
   try {

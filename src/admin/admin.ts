@@ -3,12 +3,12 @@ import * as AdminJSMongoose from "@adminjs/mongoose";
 import AdminJSExpress from "@adminjs/express";
 
 // Import models
-import DeveloperInfo from "../models/DeveloperInfo.ts";
-import Project from "../models/Project.ts";
-import Skills from "../models/Skills.ts";
-import Experience from "../models/Experience.ts";
-import Testimonial from "../models/Testimonial.ts";
-import ContactMessage from "../models/ContactMessage.ts";
+import DeveloperInfo from "../models/DeveloperInfo.js";
+import Project from "../models/Project.js";
+import Skills from "../models/Skills.js";
+import Experience from "../models/Experience.js";
+import Testimonial from "../models/Testimonial.js";
+import ContactMessage from "../models/ContactMessage.js";
 
 AdminJS.registerAdapter(AdminJSMongoose);
 

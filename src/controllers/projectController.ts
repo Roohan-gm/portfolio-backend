@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import Project from '../models/Project.ts';
+import Project from '../models/Project.js';
 
 export const getProjects = async (req: Request, res: Response) => {
   const { category, status, limit } = req.query;

@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import Experience from '../models/Experience.ts';
+import Experience from '../models/Experience.js';
 
 export const getExperience = async (_: Request, res: Response) => {
   try {
