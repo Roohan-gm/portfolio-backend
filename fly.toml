@@ -1,10 +1,10 @@
-# fly.toml app configuration file generated for portfolio-backend-roohan on 2025-10-24T12:51:13Z
+# fly.toml app configuration file generated for portfolio-backend-roohan on 2025-10-24T19:44:08+05:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
 app = 'portfolio-backend-roohan'
-primary_region = 'iad'
+primary_region = 'sin'
 
 [build]
 
@@ -20,4 +20,3 @@ primary_region = 'iad'
   memory = '1gb'
   cpu_kind = 'shared'
   cpus = 1
-  memory_mb = 1024
